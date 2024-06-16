@@ -91,17 +91,15 @@
         </x-app-layout>
     @else
         <x-guest-layout>
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-            @endif
-            
-            @if (session('error'))
-            <div class="alert alert-error">
-                {{ session('error') }}
-            </div>
-            @endif
+        @endif
 
             <form action="/post" method="post" style="margin-bottom: 20px; padding-top:20px">
                 @csrf
@@ -115,7 +113,19 @@
                             <h3 style="margin:0">{{ $post->user->name }}</h3>
                             <small>Posted on {{ $post->created_at->diffForHumans() }}</small>
                         </div>
+
                         <p>{{ $post->body }}</p>
+
+                        <div style="display:flex; align-items: center; gap:10px;">
+                            <form action="/like" method="POST">
+                            @csrf
+                                <input type="hidden" name="post_id" value="{{$post->id}}">
+                                <button type="submit" style="padding: 0; margin:0; background: none;">
+                                    <i class="fa fa-heart" style="color: {{ 'gray' }}"></i>
+                                </button>
+                            </form>
+                            <p>{{$post->likes()->count()}}</p>
+                        </div>
                     </div>
                     <hr>
                 @endforeach

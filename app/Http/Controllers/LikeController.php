@@ -22,15 +22,8 @@ class LikeController extends Controller
                         ->where('post_id', $postId)
                         ->first();
 
-    if ($existingLike) {
-        
-        $existingLike->delete();
-    } else {
-        Like::create([
-            'user_id' => $userId,
-            'post_id' => $postId,
-        ]);
-    }
+    if ($existingLike) { $existingLike->delete(); } 
+    else { Like::create([ 'user_id' => $userId, 'post_id' => $postId, ]); }
 
     return redirect()->back();
 }
