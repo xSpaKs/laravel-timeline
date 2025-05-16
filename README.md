@@ -46,7 +46,7 @@ Ce projet est une application web de type mini-réseau social développée avec 
 | `/profile`       | `ProfileController` (edit, update, destroy) | Auth |
 | `/dashboard`     | Vue dashboard + auth + email vérifié         |
 
----
+
 
 ## 🖼 Aperçu visuel
 
@@ -68,12 +68,11 @@ Ce projet est une application web de type mini-réseau social développée avec 
 
 ## 🚀 Installation
 
-git clone https://github.com/ton-utilisateur/laravel-timeline.git
-cd laravel-timeline
-
-composer install
-cp .env.example .env
-php artisan key:generate
+- git clone https://github.com/xSpaKs/laravel-timeline.git
+- cd laravel-timeline
+- composer install
+- cp .env.example .env
+- php artisan key:generate
 
 # Configure ta base de données dans le fichier .env
 php artisan migrate
