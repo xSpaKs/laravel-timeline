@@ -61,7 +61,7 @@ Ce projet est une application web de type mini-réseau social développée avec 
 
 - Laravel 10
 - Blade templating
-- Tailwind CSS (présumé, ou CSS personnalisé)
+- Water CSS
 - PHP 8.1+
 - MySQL / SQLite
   
