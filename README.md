@@ -6,7 +6,7 @@ Ce projet est une application web de type mini-réseau social développée avec 
 
 ## ✨ Fonctionnalités principales
 
-- 👤 Authentification utilisateur (Laravel Breeze ou Jetstream)
+- 👤 Authentification utilisateur
 - 📝 Création de publications via un champ texte
 - ❤️ Système de like (1 like par utilisateur et par post)
 - 🗂 Liste des publications en temps réel dans une **timeline**
